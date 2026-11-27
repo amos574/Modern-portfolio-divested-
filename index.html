@@ -8,14 +8,24 @@
 </head>
 <body>
 
-  <!-- Header & Navigation -->
+  <!-- Header & Responsive Navigation -->
   <header class="site-header">
     <nav class="navbar container">
-      <a href="#" class="logo">Amos<span>.dev</span></a>
-      <ul class="nav-links">
+      <a href="#" class="logo">
+        <span class="logo-mark">&lt;/&gt;</span> Amos<span>.dev</span>
+      </a>
+
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#skills">Stack</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Hire Me</a></li>
       </ul>
     </nav>
   </header>
@@ -23,84 +33,80 @@
   <!-- Main Content -->
   <main>
     <!-- Hero / About Section -->
-    <section id="about" class="about-section container">
-      <div class="about-content">
-        <span class="badge">Full Stack Engineer &amp; Builder</span>
-        <h1>Hi, I'm Amos Solomanraj Nadar</h1>
-        <p class="bio">
-          I am a Mumbai-based full-stack web developer and founder of <strong>Zunaro Labs</strong>. 
-          I build lightweight, production-ready web applications, Progressive Web Apps (PWAs), and 
-          automated reporting pipelines using Firebase, Google Apps Script, and modern web technologies.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    <section id="about" class="hero-wrapper">
+      <div class="about-section container">
+        <div class="about-content">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            Available for Full-Stack Internships
+          </div>
+          <h1>Building fast, practical <span class="gradient-text">web apps &amp; automation</span>.</h1>
+          <p class="bio">
+            Hi, I'm <strong>Amos Solomanraj Nadar</strong> — a Mumbai-based full-stack developer and founder of 
+            <strong>Zunaro Labs</strong>. I architect Progressive Web Apps, real-time cloud dashboards, and 
+            automated reporting pipelines using Firebase, JavaScript, and Google Apps Script.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">Explore Projects &darr;</a>
+            <a href="https://github.com/amos574" target="_blank" rel="noopener" class="btn btn-outline">GitHub (@amos574)</a>
+          </div>
         </div>
-      </div>
-      <div class="about-image">
-      <img src="AMOS.png" alt="Portrait of Amos Solomanraj Nadar">
+
+        <div class="about-image">
+          <div class="image-ring">
+            <img src="AMOS.png" alt="Portrait of Amos Solomanraj Nadar">
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Core Tech Stack Strip -->
+    <section id="skills" class="skills-strip">
+      <div class="container skills-inner">
+        <span class="skills-label">TOOLS &amp; STACK</span>
+        <div class="skills-list">
+          <span class="skill-chip">HTML &amp; CSS</span>
+          <span class="skill-chip">JavaScript</span>
+          <span class="skill-chip">Firebase &amp; PWAs</span>
+          <span class="skill-chip">Google Apps Script &amp; Sheets</span>
+          <span class="skill-chip">PowerShell &amp; Git</span>
+          <span class="skill-chip">OBS Studio &amp; Web Audio</span>
+          <span class="skill-chip">Google Ai Studio &amp; Applications Development</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dynamic Projects Section -->
     <section id="projects" class="projects-section">
       <div class="container">
         <div class="section-header">
-          <h2>Featured Projects</h2>
-          <p>Real-world web applications and automation tools built and deployed.</p>
+          <span class="section-eyebrow">PORTFOLIO SHOWCASE</span>
+          <h2>Featured Engineering Projects</h2>
+          <p>Filter by technology stack to explore live deployments and automation tools.</p>
         </div>
 
-        <div class="projects-grid">
-          <!-- Project Card 1 -->
-          <article class="project-card">
-            <div class="card-tag">PWA &bull; Firebase</div>
-            <h3>Daily House Expense Tracker Pro</h3>
-            <p>
-              An installable Progressive Web App for tracking daily household expenses with real-time 
-              cloud sync and automated nightly email summaries.
-            </p>
-            <a href="https://daily-house-expense-trackerpro.firebaseapp.com" target="_blank" rel="noopener" class="card-link">
-              View Live App &rarr;
-            </a>
-          </article>
-
-          <!-- Project Card 2 -->
-          <article class="project-card">
-            <div class="card-tag">Automation &bull; Apps Script</div>
-            <h3>SJTC_LOG-2026 System Logger</h3>
-            <p>
-              An automated device usage logging dashboard and scheduled monthly PDF/PNG email 
-              reporting pipeline built with Google Apps Script and Sheets.
-            </p>
-            <a href="https://github.com/amos574" target="_blank" rel="noopener" class="card-link">
-              View on GitHub &rarr;
-            </a>
-          </article>
-
-          <!-- Project Card 3 -->
-          <article class="project-card">
-            <div class="card-tag">Web Audio &bull; OBS Workflow</div>
-            <h3>Web Audio Mixer &amp; FX Controller</h3>
-            <p>
-              A browser-based soundcard control and live audio routing interface engineered for 
-              low-latency OBS Studio event streaming workflows.
-            </p>
-            <a href="https://github.com/amos574" target="_blank" rel="noopener" class="card-link">
-              View on GitHub &rarr;
-            </a>
-          </article>
+        <!-- Category Filter Buttons -->
+        <div class="filter-bar" id="filter-bar">
+          <button class="filter-btn active" data-filter="All">All Projects</button>
+          <button class="filter-btn" data-filter="Firebase">Firebase / PWA</button>
+          <button class="filter-btn" data-filter="Automation">Automation</button>
+          <button class="filter-btn" data-filter="JavaScript">JavaScript</button>
         </div>
+
+        <!-- Cards rendered dynamically by script.js -->
+        <div class="projects-grid" id="projects-container"></div>
       </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section container">
       <div class="contact-box">
-        <h2>Let's Build Something Together</h2>
-        <p>Open to full-stack engineering internships, freelance web builds, and software collaborations.</p>
+        <span class="section-eyebrow">LET'S CONNECT</span>
+        <h2>Ready to build your next web product?</h2>
+        <p>Open to full-stack software engineering internships, freelance web builds, and technical collaborations.</p>
         <div class="contact-links">
-          <a href="mailto:amossalomonrajnadar@gmail.com" class="btn btn-primary">Email Me</a>
-          <a href="https://github.com/amos574" target="_blank" rel="noopener" class="btn btn-outline">GitHub Profile</a>
+          <a href="mailto:amossalomonrajnadar@gmail.com" class="btn btn-primary">Send an Email</a>
+          <a href="https://github.com/amos574" target="_blank" rel="noopener" class="btn btn-outline">View GitHub Profile</a>
         </div>
       </div>
     </section>
@@ -109,9 +115,10 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 Amos Solomanraj Nadar &bull; Built for SkillMe Full Stack Internship (Week 1)</p>
+      <p>&copy; 2026 Amos Solomanraj Nadar &bull; Zunaro Labs &bull; Built for SkillMe Full Stack Internship (Week 2)</p>
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
