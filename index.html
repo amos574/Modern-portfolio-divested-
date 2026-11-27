@@ -8,11 +8,18 @@
 </head>
 <body>
 
-  <!-- Header & Navigation -->
+  <!-- Header & Responsive Navigation -->
   <header class="site-header">
     <nav class="navbar container">
       <a href="#" class="logo">Amos<span>.dev</span></a>
-      <ul class="nav-links">
+      
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -22,7 +29,7 @@
 
   <!-- Main Content -->
   <main>
-    <!-- Hero / About Section -->
+    <!-- About Section -->
     <section id="about" class="about-section container">
       <div class="about-content">
         <span class="badge">Full Stack Engineer &amp; Builder</span>
@@ -38,11 +45,11 @@
         </div>
       </div>
       <div class="about-image">
-      <img src="AMOS.png" alt="Portrait of Amos Solomanraj Nadar">
+        <img src="AMOS.png" alt="Portrait of Amos Solomanraj Nadar">
       </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Dynamic Projects Section -->
     <section id="projects" class="projects-section">
       <div class="container">
         <div class="section-header">
@@ -50,46 +57,16 @@
           <p>Real-world web applications and automation tools built and deployed.</p>
         </div>
 
-        <div class="projects-grid">
-          <!-- Project Card 1 -->
-          <article class="project-card">
-            <div class="card-tag">PWA &bull; Firebase</div>
-            <h3>Daily House Expense Tracker Pro</h3>
-            <p>
-              An installable Progressive Web App for tracking daily household expenses with real-time 
-              cloud sync and automated nightly email summaries.
-            </p>
-            <a href="https://daily-house-expense-trackerpro.firebaseapp.com" target="_blank" rel="noopener" class="card-link">
-              View Live App &rarr;
-            </a>
-          </article>
-
-          <!-- Project Card 2 -->
-          <article class="project-card">
-            <div class="card-tag">Automation &bull; Apps Script</div>
-            <h3>SJTC_LOG-2026 System Logger</h3>
-            <p>
-              An automated device usage logging dashboard and scheduled monthly PDF/PNG email 
-              reporting pipeline built with Google Apps Script and Sheets.
-            </p>
-            <a href="https://github.com/amos574" target="_blank" rel="noopener" class="card-link">
-              View on GitHub &rarr;
-            </a>
-          </article>
-
-          <!-- Project Card 3 -->
-          <article class="project-card">
-            <div class="card-tag">Web Audio &bull; OBS Workflow</div>
-            <h3>Web Audio Mixer &amp; FX Controller</h3>
-            <p>
-              A browser-based soundcard control and live audio routing interface engineered for 
-              low-latency OBS Studio event streaming workflows.
-            </p>
-            <a href="https://github.com/amos574" target="_blank" rel="noopener" class="card-link">
-              View on GitHub &rarr;
-            </a>
-          </article>
+        <!-- Category Filter Buttons -->
+        <div class="filter-bar" id="filter-bar">
+          <button class="filter-btn active" data-filter="All">All</button>
+          <button class="filter-btn" data-filter="Firebase">Firebase / PWA</button>
+          <button class="filter-btn" data-filter="Automation">Automation</button>
+          <button class="filter-btn" data-filter="JavaScript">JavaScript</button>
         </div>
+
+        <!-- Cards rendered dynamically by script.js -->
+        <div class="projects-grid" id="projects-container"></div>
       </div>
     </section>
 
@@ -109,9 +86,10 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 Amos Solomanraj Nadar &bull; Built for SkillMe Full Stack Internship (Week 1)</p>
+      <p>&copy; 2026 Amos Solomanraj Nadar &bull; Built for SkillMe Full Stack Internship (Week 2)</p>
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
